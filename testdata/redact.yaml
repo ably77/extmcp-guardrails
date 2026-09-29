@@ -1,0 +1,6 @@
+mode: redact
+patterns:
+  - name: BANK_ACCOUNT
+    regex: '\b\d{8,17}\b'
+  - name: TAX_ID
+    regex: '\b\d{2}-\d{7}\b'

@@ -1,0 +1,25 @@
+mode: authz
+personas:
+  requester:
+    tools:
+      - get_supplier
+      - list_purchase_orders
+      - create_purchase_order
+    poLimit: 1000
+  buyer:
+    tools:
+      - get_supplier
+      - list_purchase_orders
+      - create_purchase_order
+      - send_supplier_email
+    poLimit: 10000
+  finance-approver:
+    tools:
+      - "*"
+    poLimit: 250000
+disabledTools: []
+email:
+  allowedDomains:
+    - try-solo.io
+approval:
+  url: https://approvals.try-solo.io/requests
